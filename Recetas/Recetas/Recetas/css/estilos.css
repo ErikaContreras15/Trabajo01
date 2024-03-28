@@ -135,23 +135,6 @@ h3 {
     background-size: cover;
 }
 
-.header3 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 110vh;
-    background: url(imagenes/b7.gif) no-repeat center;
-    background-size: cover;
-}
-
-.header4 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 110vh;
-    background: url(imagenes/b8.gif) no-repeat center;
-    background-size: cover;
-}
 
 .pagina_inicio {
     background: #ffffff;

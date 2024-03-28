@@ -1,34 +1,32 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Obtener el formulario y los campos de entrada
     const form = document.getElementById("survey-form");
-    const nombreInput = document.getElementById("nombre");
-    const ingredientesInput = document.getElementById("ingredientes");
-    const pasosInput = document.getElementById("pasos");
+    const comentarioInput = document.getElementById("comentario");
+
   
     // Agregar un controlador de eventos para enviar el formulario
     form.addEventListener("submit", function(event) {
       event.preventDefault();
   
       // Obtener los valores de los campos de entrada
-      const nombre = nombreInput.value;
-      const ingredientes = ingredientesInput.value;
-      const pasos = pasosInput.value;
+      const comentario = comentarioInput.value;
+      
   
       // Validar que los campos no estén vacíos
-      if (nombre.trim() === "" || ingredientes.trim() === "" || pasos.trim() === "" ) {
+      if (comentario.trim() === "" ) {
         alert("Por favor, completa todos los campos.");
         return;
       }
   
       // Guardar los datos en el Local Storage
-      saveDataToLocalStorage(nombre, ingredientes, pasos);
+      saveDataToLocalStorage(comentario);
   
       // Reiniciar los campos del formulario
       form.reset();
     });
   
     // Función para guardar los datos en el Local Storage
-    function saveDataToLocalStorage(nombre, ingredientes,pasos) {
+    function saveDataToLocalStorage(comentario) {
       // Obtener los datos anteriores del Local Storage
       let storedData = localStorage.getItem("surveyData");
       if (storedData === null) {
@@ -38,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
   
       // Agregar los nuevos datos a la lista
-      storedData.push({ nombre, ingredientes, pasos });
+      storedData.push({ comentario });
   
       // Guardar la lista actualizada en el Local Storage
       localStorage.setItem("surveyData", JSON.stringify(storedData));
